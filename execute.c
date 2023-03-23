@@ -35,7 +35,7 @@ int execute(char *content, stack_t **stack, unsigned int counter, FILE *file)
 	if (op && op[0] == '#')
 		return (0);
 	bus.arg = strtok(NULL, "\n\t");
-	while (ops[i].opcode && op)
+	while (opst[i].opcode && op)
 	{
 		if (strcmp(op, ops[i].opcode) == 0)
 		{	opst[i].f(stack, counter);
@@ -51,4 +51,3 @@ int execute(char *content, stack_t **stack, unsigned int counter, FILE *file)
 		exit(EXIT_FAILURE);}
 	return (1);
 }
- 
